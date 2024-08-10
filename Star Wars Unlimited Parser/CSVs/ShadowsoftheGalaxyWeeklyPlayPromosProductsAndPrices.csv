@@ -1,0 +1,58 @@
+productId,name,cleanName,imageUrl,categoryId,groupId,url,modifiedOn,imageCount,extRarity,extNumber,extDescription,extAspect,extCardType,extTraits,extCost,extPower,extHP,extArenaType,lowPrice,midPrice,highPrice,marketPrice,directLowPrice,subTypeName
+557740,Nite Owl Skirmisher,Nite Owl Skirmisher,https://tcgplayer-cdn.tcgplayer.com/product/557740_200w.jpg,79,23555,https://cpt.tcgcsv.com/Q6t6,2024-07-08T17:14:25.687,1,Common,01/20,<strong>Smuggle</strong> <strong>[5 [Aggression] [Heroism]]</strong>,Aggression;Heroism,Unit,Mandalorian;Trooper,3,4,3,Ground,0.24,0.49,4.0,0.42,,Normal
+557741,Take Captive,Take Captive,https://tcgplayer-cdn.tcgplayer.com/product/557741_200w.jpg,79,23555,https://cpt.tcgcsv.com/R6t6,2024-07-08T17:14:45.953,1,Common,02/20,A friendly unit captures an enemy non-leader unit in the same arena.,Command,Event,Tactic,3,,,,0.1,0.5,4.91,0.28,,Normal
+557742,Weequay Pirate Gang,Weequay Pirate Gang,https://tcgplayer-cdn.tcgplayer.com/product/557742_200w.jpg,79,23555,https://cpt.tcgcsv.com/S6t6,2024-07-08T17:15:22.797,1,Common,03/20,"<strong>Ambush</strong>
+<strong>Smuggle</strong> <strong>[5 [Command]]</strong>",Command,Unit,Underworld,4,3,3,Ground,0.14,0.38,3.01,0.3,,Normal
+557743,Pyke Sentinel,Pyke Sentinel,https://tcgplayer-cdn.tcgplayer.com/product/557743_200w.jpg,79,23555,https://cpt.tcgcsv.com/T6t6,2024-07-08T17:15:43.823,1,Common,04/20,<strong>Sentinel</strong>,Vigilance;Villainy,Unit,Underworld,2,2,3,Ground,0.14,0.5,3.0,0.25,,Normal
+557748,Gideon's Light Cruiser - Dark Troopers' Station (Hyperspace),Gideons Light Cruiser Dark Troopers Station Hyperspace,https://tcgplayer-cdn.tcgplayer.com/product/557748_200w.jpg,79,23555,https://cpt.tcgcsv.com/-6t6,2024-07-08T17:16:22.2,1,Common,05/20,"<strong>Overwhelm</strong> 
+<br>
+<strong>When Played:</strong> If you control Moff Gideon <em>(as a leader or unit)</em>, play a i<strong>Villainy</strong> unit that costs 3 or less from your hand or discard pile for free.",Villainy,Unit,Capital Ship;Imperial;Vehicle,8,7,7,Space,0.5,0.75,2.95,0.59,,Normal
+557749,Incinerator Trooper (Hyperspace),Incinerator Trooper Hyperspace,https://tcgplayer-cdn.tcgplayer.com/product/557749_200w.jpg,79,23555,https://cpt.tcgcsv.com/_6t6,2024-07-08T17:16:33.927,1,Common,06/20,"While attacking, this unit deals combat damage before the defender.",Villainy,Unit,Imperial;Trooper,2,2,2,Ground,1.03,2.0,4.0,1.84,,Normal
+557752,Grogu - Irresistible (Hyperspace),Grogu Irresistible Hyperspace,https://tcgplayer-cdn.tcgplayer.com/product/557752_200w.jpg,79,23555,https://cpt.tcgcsv.com/37t6,2024-07-08T17:11:35.65,1,Common,07/20,<strong>Action [T]:</strong> Exhaust an enemy unit.,Cunning;Heroism,Unit,Force,2,0,5,Ground,1.16,1.44,4.0,1.32,,Normal
+557754,Greef Karga - Affable Commissioner (Hyperspace),Greef Karga Affable Commissioner Hyperspace,https://tcgplayer-cdn.tcgplayer.com/product/557754_200w.jpg,79,23555,https://cpt.tcgcsv.com/67t6,2024-07-08T17:16:51.183,1,Common,08/20,"<strong>When Played:</strong> Search the top 5 cards of your deck for an upgrade, reveal it, and draw it.",Heroism,Unit,Fringe;Official,2,2,2,Ground,0.29,0.47,4.0,0.4,,Normal
+557755,Razor Crest - Reliable Gunship (Hyperspace),Razor Crest Reliable Gunship Hyperspace,https://tcgplayer-cdn.tcgplayer.com/product/557755_200w.jpg,79,23555,https://cpt.tcgcsv.com/77t6,2024-07-08T17:17:10.013,1,Common,09/20,"<strong>Restore 2</strong>
+<br>
+<strong>When Played:</strong> You may return an upgrade from your discard pile to your hand.",Heroism;Vigilance,Event,Mandalorian;Transport;Vehicle,4,3,4,Space,1.5,1.86,3.0,1.83,,Normal
+557758,Calculated Lethality (Hyperspace),Calculated Lethality Hyperspace,https://tcgplayer-cdn.tcgplayer.com/product/557758_200w.jpg,79,23555,https://cpt.tcgcsv.com/b7t6,2024-07-08T17:17:47.573,1,Common,10/20,"Defeat a non-leader unit that costs 3 or less. For each upgrade that was on that unit, give an Experience token to a friendly unit.",Vigilance;Villainy,Event,Tactic,4,,,,0.45,0.7,2.98,0.55,,Normal
+557760,The Mandalorian's Rifle (Hyperspace),The Mandalorians Rifle Hyperspace,https://tcgplayer-cdn.tcgplayer.com/product/557760_200w.jpg,79,23555,https://cpt.tcgcsv.com/d7t6,2024-07-08T17:18:00.42,1,Common,11/20,"Attach to a friendly non-<strong>VEHICLE</strong> unit.
+<br>
+<strong>When Played:</strong> If attached unit is The Mandalorian, he captures an exhausted enemy non-leader unit.",Heroism,Upgrade,Item;Weapon,3,+3,+0,,0.59,0.9,4.0,0.66,,Normal
+557762,Phase-III Dark Trooper (Hyperspace),Phase III Dark Trooper Hyperspace,https://tcgplayer-cdn.tcgplayer.com/product/557762_200w.jpg,79,23555,https://cpt.tcgcsv.com/g7t6,2024-07-08T17:18:23.123,1,Common,12/20,"<strong>Sentinel</strong> 
+<br>
+<strong>When combat damage is dealt to this unit:</strong> Give an Experience token to this unit.",Command;Villainy,Unit,Droid;Imperial;Trooper,3,3,3,Ground,3.45,4.99,10.99,3.87,,Normal
+557763,Relentless Pursuit,Relentless Pursuit,https://tcgplayer-cdn.tcgplayer.com/product/557763_200w.jpg,79,23555,https://cpt.tcgcsv.com/h7t6,2024-07-21T18:49:57.023,1,Rare,13/20,"Choose a friendly unit. It captures an enemy non-leader unit that costs the same as or less than it. If the friendly unit is a <strong>Bounty Hunter</strong>, give a Shield token to it.",Cunning,Event,Tactic,3,,,,0.45,0.9,20.0,0.71,,Normal
+557763,Relentless Pursuit,Relentless Pursuit,https://tcgplayer-cdn.tcgplayer.com/product/557763_200w.jpg,79,23555,https://cpt.tcgcsv.com/h7t6,2024-07-21T18:49:57.023,1,Rare,13/20,"Choose a friendly unit. It captures an enemy non-leader unit that costs the same as or less than it. If the friendly unit is a <strong>Bounty Hunter</strong>, give a Shield token to it.",Cunning,Event,Tactic,3,,,,3.55,3.75,9.0,3.71,,Foil
+557764,Cloud-Rider,Cloud Rider,https://tcgplayer-cdn.tcgplayer.com/product/557764_200w.jpg,79,23555,https://cpt.tcgcsv.com/j7t6,2024-07-15T13:43:11.09,1,Rare,14/20,<strong>Ambush</strong>,Cunning,Unit,Underworld,2,3,1,Ground,0.74,1.47,30.05,0.92,,Normal
+557764,Cloud-Rider,Cloud Rider,https://tcgplayer-cdn.tcgplayer.com/product/557764_200w.jpg,79,23555,https://cpt.tcgcsv.com/j7t6,2024-07-15T13:43:11.09,1,Rare,14/20,<strong>Ambush</strong>,Cunning,Unit,Underworld,2,3,1,Ground,2.7,3.4,10.99,2.93,,Foil
+557766,Enfys Nest - Marauder,Enfys Nest Marauder,https://tcgplayer-cdn.tcgplayer.com/product/557766_200w.jpg,79,23555,https://cpt.tcgcsv.com/l7t6,2024-07-15T13:43:17.233,1,Rare,15/20,"<strong>Ambush</strong> 
+
+<br>While a friendly unit <em>(including this one)</em> is attacking using Ambush, the defender gets -3/-0.",Cunning,Unit,Underworld,6,5,4,Ground,1.49,1.96,4.99,1.83,,Foil
+557766,Enfys Nest - Marauder,Enfys Nest Marauder,https://tcgplayer-cdn.tcgplayer.com/product/557766_200w.jpg,79,23555,https://cpt.tcgcsv.com/l7t6,2024-07-15T13:43:17.233,1,Rare,15/20,"<strong>Ambush</strong> 
+
+<br>While a friendly unit <em>(including this one)</em> is attacking using Ambush, the defender gets -3/-0.",Cunning,Unit,Underworld,6,5,4,Ground,0.64,1.0,9.9,0.75,,Normal
+557775,Millennium Falcon - Lando's Pride,Millennium Falcon Landos Pride,https://tcgplayer-cdn.tcgplayer.com/product/557775_200w.jpg,79,23555,https://cpt.tcgcsv.com/w7t6,2024-07-15T13:43:05.04,1,Rare,16/20,"If you play this unit from your hand, it gains <strong>Ambush</strong>.
+<br>
+<strong>Smuggle</strong> [6 [Cunning] [Heroism]]",Cunning;Heroism,Unit,Transport;Underworld;Vehicle,6,5,5,Space,2.33,3.5,9.0,2.56,,Foil
+557775,Millennium Falcon - Lando's Pride,Millennium Falcon Landos Pride,https://tcgplayer-cdn.tcgplayer.com/product/557775_200w.jpg,79,23555,https://cpt.tcgcsv.com/w7t6,2024-07-15T13:43:05.04,1,Rare,16/20,"If you play this unit from your hand, it gains <strong>Ambush</strong>.
+<br>
+<strong>Smuggle</strong> [6 [Cunning] [Heroism]]",Cunning;Heroism,Unit,Transport;Underworld;Vehicle,6,5,5,Space,1.6,2.2,15.9,1.85,,Normal
+557778,IG-11 - I Cannot Be Captured,IG 11 I Cannot Be Captured,https://tcgplayer-cdn.tcgplayer.com/product/557778_200w.jpg,79,23555,https://cpt.tcgcsv.com/B7t6,2024-07-15T13:40:05.423,1,Rare,17/20,"If this unit would be captured, defeat him and deal 3 damage to each enemy ground unit instead.
+<br>
+<strong>On Attack:</strong> You may deal 3 damage to a damaged ground unit.",Aggression,Unit,Bounty Hunter;Droid,5,6,5,Ground,1.57,1.82,24.2,1.74,,Normal
+557778,IG-11 - I Cannot Be Captured,IG 11 I Cannot Be Captured,https://tcgplayer-cdn.tcgplayer.com/product/557778_200w.jpg,79,23555,https://cpt.tcgcsv.com/B7t6,2024-07-15T13:40:05.423,1,Rare,17/20,"If this unit would be captured, defeat him and deal 3 damage to each enemy ground unit instead.
+<br>
+<strong>On Attack:</strong> You may deal 3 damage to a damaged ground unit.",Aggression,Unit,Bounty Hunter;Droid,5,6,5,Ground,2.96,3.51,12.99,3.43,,Foil
+557779,Jango Fett - Renowned Bounty Hunter,Jango Fett Renowned Bounty Hunter,https://tcgplayer-cdn.tcgplayer.com/product/557779_200w.jpg,79,23555,https://cpt.tcgcsv.com/C7t6,2024-07-15T13:42:01.207,1,Rare,18/20,"While attacking a unit with a <strong>Bounty</strong>, this unit gets +3/+0 and gains <strong>Overwhelm</strong>.
+<br>
+<strong>When this unit attacks and defeats a unit:</strong> Draw a card.",Aggression;Villainy,Unit,Bounty Hunter;Underworld,4,3,6,Ground,3.5,4.19,13.14,3.75,,Normal
+557779,Jango Fett - Renowned Bounty Hunter,Jango Fett Renowned Bounty Hunter,https://tcgplayer-cdn.tcgplayer.com/product/557779_200w.jpg,79,23555,https://cpt.tcgcsv.com/C7t6,2024-07-15T13:42:01.207,1,Rare,18/20,"While attacking a unit with a <strong>Bounty</strong>, this unit gets +3/+0 and gains <strong>Overwhelm</strong>.
+<br>
+<strong>When this unit attacks and defeats a unit:</strong> Draw a card.",Aggression;Villainy,Unit,Bounty Hunter;Underworld,4,3,6,Ground,3.69,5.27,45.0,4.59,,Foil
+557781,Remnant Reserves,Remnant Reserves,https://tcgplayer-cdn.tcgplayer.com/product/557781_200w.jpg,79,23555,https://cpt.tcgcsv.com/F7t6,2024-07-15T13:41:10.897,1,Rare,19/20,"Search the top 5 cards of your deck for up to 3 units, reveal them, and draw them.",Command;Villainy,Event,Supply,4,,,Ground,0.45,0.9,30.9,0.65,,Normal
+557781,Remnant Reserves,Remnant Reserves,https://tcgplayer-cdn.tcgplayer.com/product/557781_200w.jpg,79,23555,https://cpt.tcgcsv.com/F7t6,2024-07-15T13:41:10.897,1,Rare,19/20,"Search the top 5 cards of your deck for up to 3 units, reveal them, and draw them.",Command;Villainy,Event,Supply,4,,,Ground,1.65,2.2,11.98,2.36,,Foil
+557783,Kuiil - I Have Spoken,Kuiil I Have Spoken,https://tcgplayer-cdn.tcgplayer.com/product/557783_200w.jpg,79,23555,https://cpt.tcgcsv.com/H7t6,2024-07-15T13:40:44.193,1,Rare,20/20,"<strong>Restore 1</strong>
+<br>
+<strong>On Attack:</strong> Discard a card from your deck. If it shares an aspect with your base, return it to your hand.",Heroism;Vigilance,Unit,Fringe,2,2,3,Ground,1.28,2.0,3.99,1.61,,Foil
+557783,Kuiil - I Have Spoken,Kuiil I Have Spoken,https://tcgplayer-cdn.tcgplayer.com/product/557783_200w.jpg,79,23555,https://cpt.tcgcsv.com/H7t6,2024-07-15T13:40:44.193,1,Rare,20/20,"<strong>Restore 1</strong>
+<br>
+<strong>On Attack:</strong> Discard a card from your deck. If it shares an aspect with your base, return it to your hand.",Heroism;Vigilance,Unit,Fringe,2,2,3,Ground,0.5,0.7,30.9,0.72,,Normal

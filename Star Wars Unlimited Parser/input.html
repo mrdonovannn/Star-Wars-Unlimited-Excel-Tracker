@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Wars Unlimited to Excel</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="jquery-csv.js"></script>
+</head>
+<body>
+    <form id="inputForm">
+        <label for="uploader">Select CSV:</label>
+        <input type="file" id="uploader" name="uploader" accept=".csv" />
+        <label for="setPicker">Select Set:</label>
+        <select id="setPicker" name="setPicker">
+            <option value="Spark of Rebellion">Spark of Rebellion</option>
+            <option value="Shadows of the Galaxy">Shadows of the Galaxy</option>
+            <option value="Other">Other</option>
+        </select>
+        <button type="submit" name="submit" id="submit">Generate // Add File to End</button>
+        <button type="reset" name="reset" id="reset">Clear Table</button>
+    </form>
+    
+    <table id="tableData"></table>
+</body>
+</html>
+<style>
+
+</style>
+<script>
+    var setLookup = {
+        "23572": "2024 Convention Exclusive",
+        "23488": "Base Set"/*"Shadows of the Galaxy"*/,
+        "23555": "Weekly Play Promos"/*"Shadows of the Galaxy: Weekly Play Promos"*/,
+        "23454": "Event Exclusive Promos",
+        "23453": "Judge Promos",
+        "23405": "Base Set"/*"Spark of Rebellion"*/,
+        "23451": "Weekly Play Promos"/*"Spark of Rebellion: Weekly Play Promos"*/,
+        "23455": "Store Showdown Promos",
+        "23452": "Prerelease Promos",
+        "23406": "GenCon 2023 Promos"
+    };
+
+    var extraSet = {
+        'Spark of Rebellion': [/*Start WPP*/540613,542132,542134,542136,542139,542143,542146,542147,542151,542158,542159,542160,542161,542162,542163,542164,542165,542166,542168,542257,/*Start PR Promo*/542130,542131,/*Start Judge*/542167,543847,543848,/*Start EEP*/542169,542170,/*Start SSP*/542171,542172,542173,542174,542175],
+        'Shadows of the Galaxy': [/*Start WPP*/557740,557741,557742,557743,557748,557749,557752,557754,557755,557758,557760,557762,557763,557764,557766,557775,557778,557779,557781,557783,/*Start PR Promo*/556945,556948,/*Start Judge*/558603,558606,/*Start EEP*/554304],
+        'None': [/*Start Convention Exclusive*/560586,560589,560590,560591,560592,560593,560594]
+    };
+
+    $("#inputForm").submit(function(e) {
+        e.preventDefault();
+
+        if ($('#uploader')[0].files.length > 0) {
+            sendtheform();
+        }
+    });
+
+    $("#inputForm").on('reset', function(e) {
+        $('#tableData').html('');
+    });
+
+    function sendtheform() {
+        if ($('#uploader')[0].files.length > 0) {
+            var reader = new FileReader();
+            reader.onload = onReaderLoad;
+            reader.readAsText($('#uploader')[0].files[0]);
+        }
+    }
+
+    function onReaderLoad(event) {
+        var testing = $.csv.toObjects(event.target.result);
+        //console.log(testing);
+
+        var cardData = {};
+        for (var i = 0; i < testing.length; i++) {
+            var currentCard = testing[i];
+            
+            if (currentCard.extNumber.indexOf('//') < 0) {
+                var assumedSet = '';
+                if (currentCard.groupId == 23405 || extraSet['Spark of Rebellion'].indexOf(Number(currentCard.productId)) >= 0) {
+                    assumedSet = 'Spark of Rebellion';
+                } else if (currentCard.groupId == 23488 || extraSet['Shadows of the Galaxy'].indexOf(Number(currentCard.productId)) >= 0) {
+                    assumedSet = 'Shadows of the Galaxy';
+                } else if (extraSet['None'].indexOf(Number(currentCard.productId)) >= 0) {
+                    assumedSet = 'Other';
+                }
+
+                if (currentCard.extNumber != '') {
+                    if (!(currentCard.extNumber in cardData)) {
+                        cardData[currentCard.extNumber] = {
+                            setID: currentCard.extNumber,
+                            variants: [],
+                            rarity: currentCard.extRarity,
+                            aspects: (currentCard.extAspect != '' ? currentCard.extAspect.split(';') : ['-']),
+                            cardName: currentCard.name,
+                            cardType: currentCard.extCardType,
+                            groupCode: currentCard.groupId,
+                            assumedSet: assumedSet
+                        };
+                    }
+                    if (!(currentCard.subTypeName in cardData[currentCard.extNumber].variants)) {
+                        cardData[currentCard.extNumber].variants.push(currentCard.subTypeName);
+                    }
+                } else {
+                    if (!('Sealed' in cardData)) {
+                        cardData.Sealed = {
+                            groupCode: currentCard.groupId,
+                            assumedSet: assumedSet,
+                            items: []
+                        };
+                    }
+                    if (!(currentCard.name in cardData.Sealed)) {
+                        cardData.Sealed.items.push(currentCard.name);
+                    }
+                }
+            }
+        }
+
+        //console.log(cardData);
+
+        var cardDataOrder = Object.keys(cardData);
+        cardDataOrder = cardDataOrder.sort(function(a, b) {
+            if (a == 'Sealed') {
+                return -1;
+            } else if (b == 'Sealed') {
+                return 1;
+            } else {
+                var number1 = a;
+                var number2 = b;
+                number1 = number1.replace('T','1000');
+                number2 = number2.replace('T','1000');
+                if (number1.indexOf('/') >= 0) {
+                    number1 = number1.split('/')[0];
+                }
+                if (number2.indexOf('/') >= 0) {
+                    number2 = number2.split('/')[0];
+                }
+                number1 = Number(number1);
+                number2 = Number(number2);
+
+                return number1 - number2;
+            }
+        });
+        
+        var baseRowHTML = '';
+        var sealedRowHTML = '';
+        for (var j = 0; j < cardDataOrder.length; j++) {
+            var currentRow = cardData[cardDataOrder[j]];
+
+            if (currentRow.assumedSet == $('#setPicker').val()) {
+                if (cardDataOrder[j] == 'Sealed') {
+                    cardData.Sealed.items = cardData.Sealed.items.sort();
+                    for (var k = 0; k < cardData.Sealed.items.length; k++) {
+                        sealedRowHTML += '<tr><td>SEALED</td><td></td><td>x</td><td>' + cardData.Sealed.items[k] + '</td><td></td><td>Sealed</td><td>-</td><td></td><td>' + setLookup[cardData.Sealed.groupCode] + '</td></tr>';
+                    }
+                } else {
+                    baseRowHTML += '<tr><td>' + currentRow.setID + '</td><td>' + (currentRow.variants.indexOf('Normal') >= 0 ? '' : 'x') + '</td><td>' + (currentRow.variants.indexOf('Foil') >= 0 ? '' : 'x') + '</td><td>' + currentRow.cardName + '</td><td>' + currentRow.rarity.slice(0, 1) + '</td><td>' + currentRow.cardType + '</td>' + (currentRow.aspects.length === 1 ? '<td>' + currentRow.aspects[0] + '</td><td></td>' : '<td>' + currentRow.aspects[0] + '</td><td>' + currentRow.aspects[1] + '</td>') + '<td>' + setLookup[currentRow.groupCode] + '</td></tr>';
+                }
+            }
+        }
+
+        baseRowHTML = sealedRowHTML + baseRowHTML;
+        if ($('#tableData').html() == '') {
+            baseRowHTML = '<thead><tr><th>Card No.</th><th>Normal</th><th>Foil</th><th>Card Name</th><th>Rarity</th><th>Card Type</th><th>Aspect(s)</th><th></th><th>Source</th></tr></thead><tbody>' + baseRowHTML + '</tbody>';
+            $('#tableData').html(baseRowHTML);
+        } else {
+            var oldHTML = $('#tableData').html().replace('</tbody>','');
+            $('#tableData').html(oldHTML + baseRowHTML + '</tbody>');
+        }
+    }
+</script>
