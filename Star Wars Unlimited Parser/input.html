@@ -20,7 +20,7 @@
             <option value="Shadows of the Galaxy">Shadows of the Galaxy</option>
             <option value="Other">Other</option>
         </select>
-        <button type="submit" name="submit" id="submit">Generate // Add File to End</button>
+        <button type="submit" name="submit" id="submit">Generate // Add Cards to Bottom</button>
         <button type="reset" name="reset" id="reset">Clear Table</button>
     </form>
     
@@ -72,13 +72,25 @@
 
     function onReaderLoad(event) {
         var testing = $.csv.toObjects(event.target.result);
-        //console.log(testing);
 
         var cardData = {};
+        var setCount = 0;
         for (var i = 0; i < testing.length; i++) {
             var currentCard = testing[i];
             
-            if (currentCard.extNumber.indexOf('//') < 0) {
+            if (currentCard.extNumber.indexOf('//') < 0 || currentCard.extNumber.indexOf(' // T01') >= 0 || currentCard.extNumber.indexOf(' // T03') >= 0) {
+                if (setCount == 0 && currentCard.extNumber.split('/').length == 2) {
+                    setCount = currentCard.extNumber.split('/')[1];
+                }
+
+                var setNumber = currentCard.extNumber;
+                if (setNumber.indexOf(' // T01') >= 0) {
+                    setNumber = setNumber.split(' // T01')[0] + '/' + setCount;
+                }
+                if (setNumber.indexOf(' // T03') >= 0) {
+                    setNumber = setNumber.split(' // T03')[0];
+                }
+
                 var assumedSet = '';
                 if (currentCard.groupId == 23405 || extraSet['Spark of Rebellion'].indexOf(Number(currentCard.productId)) >= 0) {
                     assumedSet = 'Spark of Rebellion';
@@ -88,21 +100,30 @@
                     assumedSet = 'Other';
                 }
 
-                if (currentCard.extNumber != '') {
-                    if (!(currentCard.extNumber in cardData)) {
-                        cardData[currentCard.extNumber] = {
-                            setID: currentCard.extNumber,
+                if (setNumber != '') {
+                    if (!(currentCard.productId in cardData)) {
+                        var aspects = (currentCard.extAspect != '' ? currentCard.extAspect.split(';') : ['-']);
+                        aspects = aspects.sort(function(a, b) {
+                            if (['Vigilance', 'Command', 'Aggression', 'Cunning', '-'].indexOf(a) >= 0) {
+                                return -1;
+                            } else {
+                                return 1;
+                            }
+                        });
+
+                        cardData[currentCard.productId] = {
+                            setID: setNumber,
                             variants: [],
                             rarity: currentCard.extRarity,
-                            aspects: (currentCard.extAspect != '' ? currentCard.extAspect.split(';') : ['-']),
-                            cardName: currentCard.name,
+                            aspects: aspects,
+                            cardName: currentCard.name.split(' // ')[0],
                             cardType: currentCard.extCardType,
                             groupCode: currentCard.groupId,
                             assumedSet: assumedSet
                         };
                     }
-                    if (!(currentCard.subTypeName in cardData[currentCard.extNumber].variants)) {
-                        cardData[currentCard.extNumber].variants.push(currentCard.subTypeName);
+                    if (!(currentCard.subTypeName in cardData[currentCard.productId].variants)) {
+                        cardData[currentCard.productId].variants.push(currentCard.subTypeName);
                     }
                 } else {
                     if (!('Sealed' in cardData)) {
@@ -119,8 +140,6 @@
             }
         }
 
-        //console.log(cardData);
-
         var cardDataOrder = Object.keys(cardData);
         cardDataOrder = cardDataOrder.sort(function(a, b) {
             if (a == 'Sealed') {
@@ -128,8 +147,8 @@
             } else if (b == 'Sealed') {
                 return 1;
             } else {
-                var number1 = a;
-                var number2 = b;
+                var number1 = cardData[a].setID;
+                var number2 = cardData[b].setID;
                 number1 = number1.replace('T','1000');
                 number2 = number2.replace('T','1000');
                 if (number1.indexOf('/') >= 0) {

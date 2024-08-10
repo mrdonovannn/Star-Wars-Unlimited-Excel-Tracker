@@ -1,5 +1,5 @@
 # Star-Wars-Unlimited-Excel-Tracker
-A very simple html file to parse through CSVs and generate a ttable that can be copied and pasted into Excel.
+A very simple html file to parse through CSVs and generate a table that can be copied and pasted into Excel.
 
 This tool uses the CSV files found here: https://tcgcsv.com/.
 
